@@ -1,0 +1,16 @@
+auth==0.4.8
+blinker==1.4
+CherryPy==4.0.0
+eventlet==0.18.1
+falcon==0.3.0
+greenlet==0.4.9
+gunicorn==19.4.5
+Jinja2==2.8
+MarkupSafe==0.23
+mongoengine==0.10.5
+pymongo==3.2
+python-mimeparse==0.1.4
+requests==2.9.1
+six==1.10.0
+Werkzeug==0.11.3
+wheel==0.24.0

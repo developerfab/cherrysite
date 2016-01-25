@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>{{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+	<!-- cabecera del sitio -->
+	<div class="encabezado grid-container">
+		<section>
+			<ul class="grid-100 mobile-grid-50">
+				<li><img class="logo" src="img/titulo.png"></li>
+			</ul>
+		</section>
+	</div>
+	<!-- menu de navegacion -->
+	<section class="menu-nav">
+		<nav class="grid-container">
+			<ul>
+        <li class="cajon grid-10 mobile-grid-50 {% if select=='inicio' %}select{% endif %}"><a href="index">Inicio</a></li>
+				<li class="cajon grid-10 mobile-grid-50 {% if select=='nosotros' %}select{% endif %}"><a href="nosotros">Nosotros</a></li>
+        <li class="cajon grid-10 mobile-grid-50 {% if select=='galeria' %}select{% endif %}"><a href="galeria">Galeria</a></li>
+				<li class="cajon grid-10 mobile-grid-50 {% if select=='contacto' %}select{% endif %}"><a href="contacto">Contactanos</a></li>
+			</ul>
+		</nav>
+	</section>
+	<!-- seccion de contenido -->
+	<section class="grid-container">
+		<div class="contenido">
+      {% block contenido %}
+      {% endblock %}
+    </div>
+    {% block article %}
+    {% endblock %}
+	</section>
+	<!-- pie de pagina del sitio -->
+	<div class="pie">
+		<footer class="grid-container">
+			<section class="grid-20 mobile-grid-50">
+				El jardin de las Flores © 2015
+			</section>
+			<section class="grid-20 mobile-grid-50">
+				<a href="#"><img src="img/googleplay.png" width="30" height="28"></a>
+			</section>
+			<section class="grid-20 mobile-grid-50">
+				<a href="#"><img src="img/twitter.png" width="30" height="28"></a>
+			</section>
+			<section class="grid-20 mobile-grid-50">
+				<a href="#"><img src="img/facebook.png" width="30" height="27"></a>
+			</section>
+		</footer>
+	</div>
+</body>
+</html>
