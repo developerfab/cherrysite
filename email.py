@@ -1,20 +1,12 @@
-#!/usr/bin/python
+from mailer import Mailer
+from mailer import Message
 
-import smtplib
+message = Message(From="me@example.com",
+                  To="fab7696650@gmail.com",
+                  charset="utf-8")
+message.Subject = "An HTML Email"
+message.Html = """This email uses <strong>HTML</strong>!"""
+message.Body = """This is alternate text."""
 
-sender = 'from@fromdomain.com'
-receivers = ['fab7696650@gmail.com']
-
-message = """From: From Person <from@fromdomain.com>
-To: To Person <fab7696650@gmail.com>
-Subject: SMTP e-mail test
-
-This is a test e-mail message.
-"""
-
-try:
-   smtpObj = smtplib.SMTP('localhost')
-   smtpObj.sendmail(sender, receivers, message)         
-   print "Successfully sent email"
-except SMTPException:
-   print "Error: unable to send email"
+sender = Mailer('localhost')
+sender.send(message)
