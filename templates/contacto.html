@@ -4,6 +4,9 @@
   <img src="img/flower-vase-438461_1280.jpg" style="height:50%; width:45%;">
 {% endblock %}
 {% block article %}
+    {% if mensaje %}
+        <h2>Tu mensaje ha sido enviado, en breve nos pondremos en contacto contigo. Gracias por confiar en nosotros</h2>
+    {% endif %}
 		<section class="grid-50 mobile-grid-50">
 			<article>
 				<h3>Puedes visitarnos en</h3>
@@ -17,7 +20,7 @@
 			</article>
 		</section>
 		<div class="formulario grid-50 mobile-grid-50">
-			<form name="contactform" method="post" action="send_form_email.php"> 
+			<form name="contactform" method="post" action="envio_mensaje"> 
 			<table width="450px"><!---Este tamaño en px es personalizable -->
 			<tr>
 			 <td valign="top">

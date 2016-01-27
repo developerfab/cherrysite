@@ -1,6 +1,7 @@
 import cherrypy
 import os.path
 import sqlite3
+import correo
 from jinja2 import Environment, FileSystemLoader
 from auth import AuthController, require, member_of, name_is
 
@@ -31,6 +32,14 @@ class Root(object):
     def contacto(self):
         tmpl = env.get_template('contacto.html')
         return tmpl.render(title='Contactanos', select='contacto')
+
+    @cherrypy.expose
+    def envio_mensaje(self, **params):
+        dic = cherrypy.request.body.params
+        msg = "Nombre: "+dic['first_name']+" "+dic['last_name']+"\n telefono: "+dic['telephone']+"\n correo "+dic['email']+"\n"+dic['message']
+        correo.mensaje(msg)
+        tmpl = env.get_template('contacto.html')
+        return tmpl.render(title='Contactanos', select='contacto', mensaje=True)
 
     @require()
     @cherrypy.expose
