@@ -1,0 +1,94 @@
+.menu-nav .select{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background: rgb(191,79,138);
+	color: #fff;
+	display: inline;
+	float: left;
+}
+.cajon{
+	background: rgb(214, 143, 184);
+	display: inline;
+	float: left;
+	padding-top: 15px;
+	padding-right: 26px;
+	padding-left: 18px;
+	padding-bottom: 15px;
+	margin-right: 5px;
+	border-radius: 4.2px;
+	color: #000;
+  text-align: center;
+
+}
+.contenido{
+	background: #fff;
+	padding: 1% 4%;
+	padding-top: 45px;
+	padding-left: 68px;
+	padding-bottom: 1%;
+	color: rgb(127,127,127);
+}
+.pie{
+	padding: 1% 4%;
+	margin-top: 1%;
+	background: rgb(214, 143, 184);
+}
+img{
+	max-height: 320px;
+	margin-bottom: 1%;
+}
+.menu-nav a{
+  text-decoration: none;
+}
+.menu-nav a:hover{
+  text-decoration: none;
+}
+a:visited{
+	color: #000;
+	text-decoration: none;
+}
+a:active{
+	text-decoration: none;
+}
+.articulo{
+	font-size: medium;
+	text-align: justify;
+}
+.articulo header{
+	font-weight: bold;
+	text-align: large;
+}
+.articulo .valores-corporativos{
+	text-align: center;
+}
+.articulo .valores-corporativos img{
+	max-height: 400px;
+}
+.articulo article{
+  margin-bottom: 1%;
+}
+.texto-home{
+	display: block;
+	position: absolute;
+	background-color: #fff;
+	right: 10%;
+	top: 3.5%;
+	width: 250px;
+	height: auto;
+	padding: 3% 1%;
+	margin-top: 10%;
+	margin-right: 5%;
+	border-color: none;
+	font-size: large;
+	text-align: center;
+}
+.titulo-home{
+	font-family: serif; 
+	font-size: 250%;
+}
+.decoracion-home{
+	color: rgb(219, 82, 154);
+	font-size: 400%;
+}
