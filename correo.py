@@ -6,7 +6,11 @@ def mensaje(msg):
     toaddrs  = 'fab7696650@gmail.com'
     # Credentials (if needed)
     username = 'parapruebasfab@gmail.com'
+<<<<<<< HEAD
     password = 'AFmedellin48'
+=======
+    password = ''
+>>>>>>> a837b197a8bbcb8de1fcdd2892e6a3472195a2e4
     mensaje = '''\\
     From: parapruebasfab@gmail.com
     Subject: contacto

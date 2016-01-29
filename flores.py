@@ -1,4 +1,5 @@
 import cherrypy
+import os
 import os.path
 import sqlite3
 import correo
@@ -50,14 +51,17 @@ class Root(object):
     def logeo():
         return auth.get_loginform()
 
+app = cherrypy.tree.mount(Root(), '/')
+
 if __name__ == '__main__':
+    cherrypy.config.update({ 'server.socket_host': '0.0.0.0', 'server.socket_port': 8000, })
     cherrypy.quickstart(Root(), config={
         '/css':
         { 'tools.staticdir.on':True,
-          'tools.staticdir.dir': "/Users/fabricio/Desktop/jardin de las flores/sitio_cherry/static/css/"
+          'tools.staticdir.dir': os.path.join(BASE_DIR, '..', 'static')
         },
         '/img':
         { 'tools.staticdir.on':True,
-          'tools.staticdir.dir': "/Users/fabricio/Desktop/jardin de las flores/sitio_cherry/static/img/"
+          'tools.staticdir.dir': os.path.join(BASE_DIR, '..', 'img')
         },
     })
