@@ -44,7 +44,7 @@ class Root(object):
 
     @cherrypy.expose
     def galeria(self):
-        tmpl = env.get_template('galeria/index.html')
+        tmpl = env.get_template('galeria2/index.html')
         return tmpl.render()
 
     @cherrypy.expose
