@@ -45,6 +45,11 @@ class Root(object):
     @cherrypy.expose
     def galeria(self):
         tmpl = env.get_template('galeria/index.html')
+        return tmpl.render()
+
+    @cherrypy.expose
+    def galery(self):
+        tmpl = env.get_template('galeria.html')
         return tmpl.render(title='Galeria', select='galeria')
 
     @require()

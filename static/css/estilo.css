@@ -1,5 +1,5 @@
 body{
-	background: rgb(0,0,0);
+	background: #fff;
 }
 #menu{
 	width: 100px;
@@ -9,7 +9,7 @@ body{
 #menu img{
 	text-align: center;
 	overflow: scroll;
-	background: rgb(0,0,0) no-repeat center center;
+	background: #fff no-repeat center center;
 	margin: auto;
 	opacity: 0.4;
 	width: auto;
