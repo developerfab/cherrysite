@@ -42,6 +42,11 @@ class Root(object):
         tmpl = env.get_template('contacto.html')
         return tmpl.render(title='Contactanos', select='contacto', mensaje=True)
 
+    @cherrypy.expose
+    def galeria(self):
+        tmpl = env.get_template('galeria/index.html')
+        return tmpl.render(title='Galeria', select='galeria')
+
     @require()
     @cherrypy.expose
     def edita_nosotros(self):
@@ -55,13 +60,18 @@ app = cherrypy.tree.mount(Root(), '/')
 
 if __name__ == '__main__':
     cherrypy.config.update({ 'server.socket_host': '0.0.0.0', 'server.socket_port': 8000, })
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     cherrypy.quickstart(Root(), config={
         '/css':
         { 'tools.staticdir.on':True,
-          'tools.staticdir.dir': os.path.join(BASE_DIR, '..', 'static')
+          'tools.staticdir.dir': os.path.join(BASE_DIR, '', 'static/css')
         },
         '/img':
         { 'tools.staticdir.on':True,
-          'tools.staticdir.dir': os.path.join(BASE_DIR, '..', 'img')
+          'tools.staticdir.dir': os.path.join(BASE_DIR, '', 'static/img')
+        },
+        '/script':
+        { 'tools.staticdir.on':True,
+          'tools.staticdir.dir': os.path.join(BASE_DIR, '', 'static/script')
         },
     })
