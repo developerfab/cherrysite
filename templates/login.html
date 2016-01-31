@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block contenido%}
+  <img src="img/garden-853942_1280.jpg" style="height:50%; width:45%;">
+  <img src="img/flower-vase-438461_1280.jpg" style="height:50%; width:45%;">
+{% endblock %}
+{% block article %}
+		<div class="formulario grid-50 mobile-grid-50">
+			<form name="login_form" method="post" action="validate_password"> 
+        <label>Nombre de usuario:</label>
+        <input type="text" name="username">
+        <label>Password:</label>
+        <input type="text" name="password">
+        <button type="submit">Enviar</button>
+			</form>
+		</div>
+{% endblock %}
