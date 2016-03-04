@@ -1,0 +1,15 @@
+{% extends "base_admin.html" %}
+{% block contenido%}
+<form name="edit_we" method="post" action="change_we" enctype="multipart/form-data">
+  <label>Misión</label><br>
+  <textarea id="mision" name="mision" rows="7" cols="70">{{ info.mision }}</textarea><br>
+  <label>Visión</label><br>
+  <textarea id="vision" name = "vision" rows="7" cols="70">{{ info.vision }}</textarea>
+  <br>
+  <label>Valores corporativos</label>
+  <input type="file" name="val_corporativo" id="val_corporativo">
+  <input type="submit" value"Actualizar">
+</form>
+{% endblock %}
+{% block article %}
+{% endblock %}

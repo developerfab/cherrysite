@@ -1,0 +1,13 @@
+{% extends "base_admin.html" %}
+{% block contenido%}
+<form name="edit_index" method="post" action="change_index">
+  <label>Titulo</label>
+  <textarea id="title" name="title">{{ info.titulo }}</textarea><br>
+  <label>Texto presentacion</label>
+  <textarea id="description" name = "description">{{ info.descripcion }}</textarea>
+  <br>
+  <input type="submit" value"Actualizar">
+</form>
+{% endblock %}
+{% block article %}
+{% endblock %}

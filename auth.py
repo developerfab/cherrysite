@@ -4,7 +4,9 @@
 # Session tool to be loaded.
 #
 
+from jinja2 import Environment, FileSystemLoader
 import cherrypy
+env = Environment(loader=FileSystemLoader('templates'))
 
 SESSION_KEY = '_cp_username'
 
@@ -12,10 +14,10 @@ def check_credentials(username, password):
     """Verifies credentials for username and password.
     Returns None on success or a string describing the error on failure"""
     # Adapt to your needs
-    if username in ('joe', 'steve') and password == 'secret':
+    if username in ('joe', 'steve', 'jardin_flores') and password == 'secret':
         return None
     else:
-        return u"Incorrect username or password."
+        return u"Usuario o password incorrecto."
     
     # An example implementation which uses an ORM could be:
     # u = User.get(username)
@@ -65,7 +67,7 @@ def require(*conditions):
 def member_of(groupname):
     def check():
         # replace with actual check if <username> is in <groupname>
-        return cherrypy.request.login == 'joe' and groupname == 'admin'
+        return cherrypy.request.login == 'jardin_flores' and groupname == 'admin'
     return check
 
 def name_is(reqd_username):
@@ -125,7 +127,7 @@ class AuthController(object):
         else:
             cherrypy.session[SESSION_KEY] = cherrypy.request.login = username
             self.on_login(username)
-            raise cherrypy.HTTPRedirect(from_page or "/")
+            raise cherrypy.HTTPRedirect("/index_admin")
     
     @cherrypy.expose
     def logout(self, from_page="/"):
